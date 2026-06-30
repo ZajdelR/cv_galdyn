@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Filip Galdyn | CV</title>
+		<meta
+			name="description"
+			content="Minimal CV page for Filip Galdyn with academic profiles and contact information."
+		/>
+		<style>
+			:root {
+				color-scheme: light;
+				--ink: #1d2328;
+				--muted: #68717a;
+				--line: #d9dee3;
+				--paper: #f7f8f6;
+				--accent: #2f6f6d;
+				--accent-dark: #214f4d;
+				--white: #ffffff;
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				margin: 0;
+				min-height: 100vh;
+				font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+				line-height: 1.6;
+				color: var(--ink);
+				background: var(--paper);
+			}
+
+			main {
+				width: min(1080px, calc(100% - 40px));
+				margin: 0 auto;
+				padding: 56px 0;
+			}
+
+			.profile {
+				display: grid;
+				grid-template-columns: 280px 1fr;
+				gap: 48px;
+				align-items: center;
+				min-height: calc(100vh - 112px);
+			}
+
+			.photo {
+				width: 100%;
+				aspect-ratio: 1 / 1.18;
+				object-fit: cover;
+				object-position: center top;
+				border-radius: 6px;
+				box-shadow: 0 20px 60px rgba(29, 35, 40, 0.13);
+				background: var(--line);
+			}
+
+			.kicker {
+				margin: 0 0 12px;
+				color: var(--accent);
+				font-size: 0.82rem;
+				font-weight: 700;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+			}
+
+			h1 {
+				margin: 0;
+				font-size: clamp(2.45rem, 7vw, 5.5rem);
+				line-height: 0.95;
+				font-weight: 750;
+				letter-spacing: 0;
+			}
+
+			h1 .surname {
+				color: var(--accent-dark);
+				font-weight: 850;
+			}
+
+			.keywords {
+				margin: 18px 0 0;
+				color: var(--accent);
+				font-size: 0.95rem;
+				font-weight: 700;
+				letter-spacing: 0.04em;
+				text-transform: uppercase;
+			}
+
+			.summary {
+				max-width: 650px;
+				margin: 28px 0 0;
+				color: var(--muted);
+				font-size: clamp(1.03rem, 2vw, 1.18rem);
+			}
+
+			.links {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 12px;
+				margin: 34px 0 0;
+				padding: 0;
+				list-style: none;
+			}
+
+			.links a {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				min-height: 44px;
+				padding: 0 18px;
+				border: 1px solid var(--line);
+				border-radius: 6px;
+				color: var(--ink);
+				background: var(--white);
+				text-decoration: none;
+				font-weight: 650;
+				transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
+			}
+
+			.links a:hover,
+			.links a:focus-visible {
+				border-color: var(--accent);
+				color: var(--accent-dark);
+				transform: translateY(-1px);
+				outline: none;
+			}
+
+			.contact {
+				margin-top: 26px;
+				color: var(--muted);
+			}
+
+			.contact a {
+				color: var(--accent-dark);
+				font-weight: 700;
+				text-decoration-thickness: 1px;
+				text-underline-offset: 4px;
+			}
+
+			.countdown {
+				margin-top: 48px;
+				padding-top: 28px;
+				border-top: 1px solid var(--line);
+			}
+
+			.countdown h2 {
+				margin: 0 0 16px;
+				font-size: 0.95rem;
+				font-weight: 750;
+				letter-spacing: 0.06em;
+				text-transform: uppercase;
+				color: var(--accent-dark);
+			}
+
+			.timer {
+				display: grid;
+				grid-template-columns: repeat(3, minmax(86px, 1fr));
+				gap: 12px;
+				max-width: 460px;
+			}
+
+			.time-block {
+				padding: 16px 14px;
+				border: 1px solid var(--line);
+				border-radius: 6px;
+				background: var(--white);
+			}
+
+			.time-block strong {
+				display: block;
+				font-size: clamp(1.6rem, 5vw, 2.35rem);
+				line-height: 1;
+				font-weight: 760;
+			}
+
+			.time-block span {
+				display: block;
+				margin-top: 7px;
+				color: var(--muted);
+				font-size: 0.78rem;
+				font-weight: 700;
+				letter-spacing: 0.07em;
+				text-transform: uppercase;
+			}
+
+			.target-date {
+				margin: 14px 0 0;
+				color: var(--muted);
+				font-size: 0.95rem;
+			}
+
+			@media (max-width: 760px) {
+				main {
+					width: min(100% - 28px, 560px);
+					padding: 32px 0;
+				}
+
+				.profile {
+					grid-template-columns: 1fr;
+					gap: 28px;
+					min-height: 0;
+				}
+
+				.photo {
+					width: min(260px, 72vw);
+				}
+
+				.links {
+					display: grid;
+					grid-template-columns: 1fr;
+				}
+
+				.links a {
+					width: 100%;
+				}
+
+				.timer {
+					grid-template-columns: repeat(3, 1fr);
+					gap: 8px;
+				}
+
+				.time-block {
+					padding: 13px 10px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<section class="profile" aria-label="Filip Galdyn CV">
+				<img class="photo" src="images/galdyn_photo.jpg" alt="Portrait of Filip Galdyn" />
+
+				<div>
+					<p class="kicker">Curriculum vitae</p>
+					<h1>Filip <span class="surname">Gałdyn</span>, PhD</h1>
+					<p class="keywords">geodesy | satellite data | data engineering | research</p>
+					<p class="summary">
+						PhD researcher at Wroclaw University of Environmental and Life Sciences.
+						This page gathers my academic profiles, publications, and contact details.
+					</p>
+
+					<ul class="links" aria-label="Profile links">
+						<li>
+							<a href="https://www.linkedin.com/in/filip-galdyn/" rel="noopener noreferrer" target="_blank">
+								LinkedIn
+							</a>
+						</li>
+						<li>
+							<a href="https://bazawiedzy.upwr.edu.pl/info/author/UPWR73637a22ce01446cb4c0ac3f94f10cb6?r=publication&amp;ps=50&amp;title=Person%2Bprofile%2B%25E2%2580%2593%2BFilip%2BGa%25C5%2582dyn%2B%25E2%2580%2593%2BWroc%25C5%2582aw%2BUniversity%2Bof%2BEnvironmental%2Band%2BLife%2BSciences&amp;lang=en&amp;pn=1" rel="noopener noreferrer" target="_blank">
+								Knowledge Base
+							</a>
+						</li>
+						<li>
+							<a href="https://www.scopus.com/authid/detail.uri?authorId=58085211600" rel="noopener noreferrer" target="_blank">
+								Scopus
+							</a>
+						</li>
+					</ul>
+
+					<p class="contact">
+						Contact me at:
+						<a href="mailto:filipgaldyn@upwr.edu.pl">filipgaldyn@upwr.edu.pl</a>
+					</p>
+
+					<section class="countdown" aria-labelledby="countdown-title">
+						<h2 id="countdown-title">Time since PhD</h2>
+						<div class="timer" role="timer" aria-live="polite">
+							<div class="time-block">
+								<strong id="days">0</strong>
+								<span>Days</span>
+							</div>
+							<div class="time-block">
+								<strong id="hours">0</strong>
+								<span>Hours</span>
+							</div>
+							<div class="time-block">
+								<strong id="minutes">0</strong>
+								<span>Minutes</span>
+							</div>
+						</div>
+						<p class="target-date">Since 2 July 2026, 15:00 CET.</p>
+					</section>
+				</div>
+			</section>
+		</main>
+
+		<script>
+			const targetDate = new Date("2026-07-02T15:00:00+01:00");
+			const day = 24 * 60 * 60 * 1000;
+			const hour = 60 * 60 * 1000;
+			const minute = 60 * 1000;
+
+			const daysEl = document.getElementById("days");
+			const hoursEl = document.getElementById("hours");
+			const minutesEl = document.getElementById("minutes");
+
+			function updateCountdown() {
+				const elapsed = Math.max(0, new Date() - targetDate);
+				const days = Math.floor(elapsed / day);
+				const hours = Math.floor((elapsed % day) / hour);
+				const minutes = Math.floor((elapsed % hour) / minute);
+
+				daysEl.textContent = days;
+				hoursEl.textContent = String(hours).padStart(2, "0");
+				minutesEl.textContent = String(minutes).padStart(2, "0");
+			}
+
+			updateCountdown();
+			window.setInterval(updateCountdown, 30000);
+		</script>
+	</body>
+</html>
