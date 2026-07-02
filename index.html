@@ -291,7 +291,7 @@
 		</main>
 
 		<script>
-			const targetDate = new Date("2026-07-02T15:00:00+01:00");
+			const phdReferenceTime = Date.UTC(2026, 6, 2, 14, 0, 0);
 			const day = 24 * 60 * 60 * 1000;
 			const hour = 60 * 60 * 1000;
 			const minute = 60 * 1000;
@@ -301,7 +301,7 @@
 			const minutesEl = document.getElementById("minutes");
 
 			function updateCountdown() {
-				const elapsed = Math.max(0, new Date() - targetDate);
+				const elapsed = Math.max(0, Date.now() - phdReferenceTime);
 				const days = Math.floor(elapsed / day);
 				const hours = Math.floor((elapsed % day) / hour);
 				const minutes = Math.floor((elapsed % hour) / minute);
